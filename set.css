@@ -1,0 +1,242 @@
+/*
+ * Fichier CSS pour "Gestion d'un Panier"
+ * Inclut la couleur aqua (bleu-vert) pour une touche moderne.
+ */
+
+/* ======================== */
+/* 0. Universal Reset & Box-Sizing Fix */
+/* ======================== */
+* {
+    /* Assure que padding et border sont inclus DANS la largeur/hauteur */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Variables pour les couleurs */
+:root {
+    --primary-color: #007bff; /* Bleu principal (pour les boutons + et -) */
+    --accent-color: aqua; /* Couleur vive Aqua pour certains accents */
+    --success-color: #28a745; /* Vert pour le bouton Ajouter */
+    --danger-color: #dc3545; /* Rouge pour le bouton Supprimer */
+    --background-light: #f4f4f9;
+    --box-shadow-color: rgba(0, 0, 0, 0.15);
+}
+
+/* ======================== */
+/* 1. Body & Titres */
+/* ======================== */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-light); 
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px;
+    min-height: 100vh;
+}
+
+h1 {
+    color: var(--primary-color); 
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+/* Style pour le titre du panier pour le différencier */
+h1:last-of-type { 
+    color: var(--accent-color); /* Utilisation de la couleur Aqua */
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 5px;
+    margin-top: 20px;
+}
+
+/* ======================== */
+/* 2. Main Container (La boîte blanche) */
+/* ======================== */
+.main-container { 
+    background-color: #fff;
+    padding: 30px; 
+    border-radius: 8px;
+    box-shadow: 0 8px 15px var(--box-shadow-color); /* Ombre plus prononcée */
+    width: 100%;
+    max-width: 450px; 
+    text-align: center;
+}
+
+/* ======================== */
+/* 3. Zone de Saisie */
+/* ======================== */
+#timer {
+    width: 100%; 
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+/* Bouton Ajouter au Panier */
+#ajouBtn {
+    background-color: var(--success-color); 
+    color: white;
+    width: 100%; 
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#ajouBtn:hover {
+    background-color: #1e7e34;
+}
+
+/* Bouton Ajouter au Panier */
+#resett {
+    background-color: var(--success-color); 
+    color: white;
+    width: 100%; 
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#resett:hover {
+    background-color: #1e7e34;
+}
+
+#pause {
+    background-color: var(--success-color); 
+    color: white;
+    width: 100%; 
+    padding: 12px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#pause:hover {
+    background-color: #1e7e34;
+}
+
+
+/* ======================== */
+/* 4. Quantity Control Group (Flexbox) */
+/* ======================== */
+.quantity-control-group {
+    display: flex;
+    align-items: center; 
+    justify-content: flex-start; 
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: #555;
+    margin-right: 15px; 
+}
+
+/* Boutons + et - */
+.btn-moins, .btn-plus {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 1.1em;
+    line-height: 1; 
+    transition: background-color 0.2s;
+    margin: 0; 
+}
+
+.btn-moins { border-radius: 4px 0 0 4px; }
+.btn-plus { border-radius: 0 4px 4px 0; }
+
+.btn-moins:hover, .btn-plus:hover { background-color: #0056b3; }
+
+/* Input de Quantité */
+#quantite-timer {
+    text-align: center;
+    width: 50px; 
+    padding: 8px 5px;
+    border: 1px solid #ccc;
+    border-radius: 0; 
+    margin: 0; 
+    -moz-appearance: textfield; 
+}
+
+/* ======================== */
+/* 5. Affichage du Total */
+/* ======================== */
+#total-display {
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    padding: 10px 0;
+    margin-bottom: 15px;
+    /* Optionnel : ajouter une bordure inférieure pour mettre en évidence */
+    border-bottom: 1px dashed #ccc; 
+}
+
+/* ======================== */
+/* 6. Liste du Panier (ul & li) */
+/* ======================== */
+#Listproduits {
+    list-style-type: none; 
+    padding: 0;
+    text-align: left;
+}
+
+#Listproduits li {
+    /* Style pour l'élément <li> (la ligne de l'article) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e9ecef;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    border-left: 5px solid var(--accent-color); /* Bande Aqua sur le côté */
+    font-size: 1em;
+}
+
+/* Input de quantité dans la liste (item-quantite-liste) */
+.item-quantite-liste {
+    width: 40px; 
+    text-align: center;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 5px;
+    margin: 0 10px;
+}
+
+/* Bouton Supprimer */
+.btn-supprimer {
+    background-color: var(--danger-color); 
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-supprimer:hover {
+    background-color: #c82333;
+}
